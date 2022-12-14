@@ -1,0 +1,29 @@
+{% extends 'todo/base.html' %}
+{% block content%}
+<div class = "header-bar">
+    <h1>Create Task</h1>
+</div>
+<div class = "list-body">
+    <form action = "" method = "post">
+        {% csrf_token %}
+        <!-- {{ form.as_p }} -->
+        <p>
+        <label for="title">Title:</label>
+        <br>
+        {{form.title}}
+    </p>
+    <p>
+        <label for="descrip">Description:</label>
+        <br>
+        {{form.description}}
+    </p>
+    <p>
+        <label for="complete">Complete</label>
+        {{form.complete}}
+    </p>
+          <button type = 'submit'>submit</button>
+        <button><a href="{% url 'Task' %}">Back</a></button>
+      </form>
+</div>
+    
+{% endblock content %}

@@ -1,0 +1,11 @@
+{% extends 'todo/base.html' %}
+{% block content %}
+<div class = "delete-body">
+    <form action = "" method = "post">
+        {% csrf_token %}
+        <p>Do you want to delete the task - <i><strong>{{object.title}}</strong></i> ? </p>
+        <button type = "submit">Yes, delete!</button>
+    </form>
+    <p>Do you want to exit the process? <a href = "{% url 'Task' %}">Go Back</a></p>
+</div>
+    {% endblock content %}

@@ -1,0 +1,28 @@
+{%extends 'todo/base.html'%}
+{% block content %}
+<div class = "header-bar">
+  <h1>Create Account</h1>
+</div>
+<div class = "list-body">
+  <form action = "" method = "post">
+    {% csrf_token %}
+    <p>
+    <label for="username">UserName:</label>
+    <br>
+    <pre> {{form.username}}</pre>
+  </p>
+  <p>
+    <label for="pwd">Password:</label>
+    <br>
+    <pre> {{form.password1}}</pre>
+  </p>
+  <p>
+    <label for = "pwd1">Confirm password:</label>
+    <br>
+    <pre> {{form.password2}}</pre>
+  </p>
+    <button type = "submit">Register</button>
+  </form>
+</div>
+  
+{% endblock content %}

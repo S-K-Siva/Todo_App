@@ -1,0 +1,15 @@
+{% extends 'todo/base.html' %}
+{% block content %}
+<div class = "header-bar">
+    <h1>Login</h1>
+</div>
+<div class = "list-body">
+    <form action="" method="post">
+      {% csrf_token %}
+      {{form.as_p}}
+      <input class = "login-button" type = "submit" value = "Login">
+      <br><br>
+        <small>Do you wanna register? <a href = "{% url 'register' %}">Register Now</a></small>
+    </form>
+</div>
+{% endblock content %}
